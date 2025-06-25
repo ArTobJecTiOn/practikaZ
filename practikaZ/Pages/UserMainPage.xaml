@@ -1,0 +1,72 @@
+﻿<Page x:Class="practikaZ.Pages.UserMainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:practikaZ.Pages"
+      mc:Ignorable="d" 
+      Loaded="Page_Loaded"
+      d:DesignHeight="500" d:DesignWidth="1000" MinHeight="500" MinWidth="1000"
+      Title="UserMainPage" Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" HorizontalAlignment = "Left" Visibility="Visible" >
+            <Button x:Name="Profile" Width="140" Content="Профиль" Height="40" Click="Profile_Click" Margin="10"/>
+            <Button x:Name="Achivement" Width="140" Content="Достижения" Height="40" Click="Achivement_Click" Margin="10"/>
+            <Button x:Name="Announcement" Width="140" Content="Сообщения" Height="40" Click="Announcement_Click" Margin="10"/>
+            <Button x:Name="Create_Order" Width="140" Content="Заказать оборудование" Height="40" Click="Create_Order_Click" Margin="10"/>
+        </StackPanel>
+
+        
+            <ListView x:Name="AnnounsList" MouseDoubleClick="Announcement_MouseDoubleClick" Margin="165,0,0,0" Visibility="Visible">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+
+
+                            <StackPanel Grid.Column="0" Orientation="Vertical">
+                                <TextBlock Text="От:"/>
+                                <TextBlock>
+                            <Run Text="От :"/>
+                            <Run Text="{Binding Author.LastName}"/>
+                            <Run Text=" "/>
+                            <Run Text="{Binding Author.FirstName}"/>
+                            <Run Text=" "/>
+                            <Run Text="{Binding Author.Patronymic}"/>
+                                </TextBlock>
+
+
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Orientation="Vertical">
+                                <TextBlock Text="Название:"/>
+                                <TextBlock Text="{Binding Title}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" Orientation="Horizontal" >
+                                <TextBlock Text="Описание:"/>
+                            <TextBlock Text="{Binding ShortMessage}" TextWrapping="NoWrap"/>
+                            </StackPanel>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        
+
+    </Grid>
+
+
+
+
+
+</Page>

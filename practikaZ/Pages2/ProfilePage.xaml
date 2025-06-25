@@ -1,0 +1,44 @@
+﻿<Page x:Class="practikaZ.Pages.ProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:practikaZ.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="1000" MinHeight="500" MinWidth="1000"
+      Title="ProfilePage" Background="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" Margin="10">
+            <TextBlock Text="Ваше имя:"/>
+            <TextBox x:Name="NameBox" Width="140" HorizontalAlignment="Left"/>
+            <TextBlock Text="Ваша фамилия:"/>
+            <TextBox x:Name="SurnameBox" Width="140" HorizontalAlignment="Left"/>
+            <TextBlock Text="Ваше отчество:"/>
+            <TextBox x:Name="PatronymicBox" Width="140" HorizontalAlignment="Left"/>
+            <TextBlock Text="Ваш логин:"/>
+            <TextBox x:Name="LoginBox" Width="140" HorizontalAlignment="Left"/>
+            <TextBlock Text="Ваш пароль:"/>
+            <TextBox x:Name="PasswordUserBox" Width="140" HorizontalAlignment="Left" Visibility="Visible" PasswordBox.PasswordChanged="PasswordUserBox_PasswordChanged"/>
+            <TextBox x:Name="VisiblePassword" Width="140" Grid.Column="2" Visibility="Collapsed" HorizontalAlignment="Left" TextChanged="VisiblePassword_TextChanged"/>
+            <TextBlock Text="Ваш номер телефона:"/>
+            <TextBox x:Name="PhoneBox" Width="140" HorizontalAlignment="Left"/>
+            <TextBlock Text="Ваш рабочий номер телефона:"/>
+            <TextBox x:Name="JobPhoneBox" Width="140" HorizontalAlignment="Left"/>
+            <TextBlock Text="Ваша должность:"/>
+            <TextBox x:Name="PostBox" Width="140" HorizontalAlignment="Left"/>
+            <TextBlock Text="Ваша специализация"/>
+            <TextBox x:Name="SpecBox" Width="140" HorizontalAlignment="Left"/>
+
+
+            <Button x:Name="UpdateProfileBtn" Content="Обновить" Click="UpdateProfileBtn_Click" HorizontalAlignment="Left" Margin="10" Width="140" Height="30"/>
+            <Button x:Name="CheckPassword" Content="Скрыть пароль" HorizontalAlignment="Left" Click="CheckPassword_Click" Margin="10" Width="140" Height="30"/>
+            <Button x:Name="DeleteAcc" Content="Удалить профиль" HorizontalAlignment="Left" Click="DeleteAcc_Click" Margin="10" Width="140" Height="30"/>
+        </StackPanel>
+    </Grid>
+</Page>
+

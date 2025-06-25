@@ -1,0 +1,21 @@
+﻿<Window x:Class="practikaZ.Pages2.AddAchiveWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:practikaZ.Pages2"
+        mc:Ignorable="d"
+        Title="AddAchiveWindow" Height="450" Width="800" Background="White">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Пользователь:"/>
+            <ComboBox x:Name="UserBox" DisplayMemberPath="LastName" SelectedValuePath="Id"/>
+
+            <TextBlock Text="Достижение:" Margin="0,10,0,0"/>
+            <ComboBox x:Name="AchievementBox" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+
+            <Button Content="Назначить" Click="Assign_Click" Margin="0,15,0,0"/>
+        </StackPanel>
+    </Grid>
+    
+</Window>
